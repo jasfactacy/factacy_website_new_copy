@@ -1,0 +1,40 @@
+<svg
+    version="1.1"
+    id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    viewBox="0 0 120.4 95.5"
+    xmlSpace="preserve"
+>
+    <style type="text/css">
+        {`
+        .st0 { fill:#2475BB; }
+        `}
+    </style>
+        <rect x="31.4" y="54.7" className="st0" width="29.9" height="14" fill="#2475BB"/>
+        <rect x="31.1" y="26.8" className="st0" width="58.2" height="14" fill="#2475BB"/>
+        <rect x="-108.3" y="54.7" className="st0" width="29.9" height="14" fill="#2475BB"/>
+        <rect x="-108.5" y="26.8" className="st0" width="58.2" height="14" fill="#2475BB"/>
+        <rect x="-241.7" y="54.7" className="st0" width="29.9" height="14" fill="#2475BB"/>
+        <rect x="-242" y="26.8" className="st0" width="58.2" height="14" fill="#2475BB"/>
+        <rect x="-404.7" y="54.7" className="st0" width="33.6" height="14" fill="#2475BB"/>
+        <rect x="-394.5" y="26.8" className="st0" width="47.8" height="14" fill="#2475BB"/>
+        <rect x="-554.3" y="54.7" className="st0" width="40.1" height="14" fill="#2475BB"/>
+        <rect x="-574.1" y="26.8" className="st0" width="40.1" height="14" fill="#2475BB"/>
+        <rect x="-687.3" y="46.7" className="st0" width="40.1" height="14" fill="#2475BB"/>
+        <rect x="-717.1" y="24.8" className="st0" width="40.1" height="14" fill="#2475BB"/>
+        <rect x="-815.7" y="36.7" className="st0" width="40.1" height="14" fill="#2475BB"/>
+        <rect x="-845.7" y="34.8" className="st0" width="29.9" height="14" fill="#2475BB"/>
+        <rect x="-946.4" y="26.7" className="st0" width="58.2" height="14" fill="#2475BB"/>
+        <rect x="-976.4" y="44.8" className="st0" width="29.9" height="14" fill="#2475BB"/>
+        <rect x="-1076" y="26.7" className="st0" width="58.2" height="14" fill="#2475BB"/>
+        <rect x="-1106" y="54.8" className="st0" width="29.9" height="14" fill="#2475BB"/>
+        <rect x="-1214" y="26.7" className="st0" width="58.2" height="14" fill="#2475BB"/>
+        <rect x="-1234" y="54.8" className="st0" width="29.9" height="14" fill="#2475BB"/>
+        <rect x="-1363.5" y="26.7" className="st0" width="58.2" height="14" fill="#2475BB"/>
+        <rect x="-1373.5" y="54.8" className="st0" width="29.9" height="14" fill="#2475BB"/>
+        <rect x="-1540.8" y="26.7" className="st0" width="58.2" height="14" fill="#2475BB"/>
+        <rect x="-1540.8" y="54.8" className="st0" width="29.9" height="14" fill="#2475BB"/>
+    </svg>

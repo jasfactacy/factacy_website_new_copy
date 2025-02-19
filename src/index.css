@@ -1,0 +1,36 @@
+:root {
+    --primary-color-900: #3E91EE;
+    --primary-color-800: #4E9AF0;
+    --primary-color-700: #5FA4F2;
+    --primary-color-600: #70ADF4;
+    --primary-color-500: #81B7F6;
+    --primary-color-400: #92C1F8;
+    --primary-color-300: #A3CAFA;
+    --primary-color-200: #B4D4FC;
+    --primary-color-100: #C5DEFE;
+
+    --primary-color-white-900: #FCFDFE;
+    --primary-color-white-700: #E2E8F0;
+    --primary-color-white-300: #94A3B8;
+
+
+    --bg-color-900: #FFF;
+    --bg-color-100: #F8FAFC;
+
+    --text-color-heading-900: #111827;
+    --text-color-heading-600: #111827;
+
+    --text-color-para-900: #334155;
+
+    --bg-footer-900: #111827;
+
+    --primary-color-light: #4a83c1;
+    --cta-button: #8000FF;
+    --font-size-lg: 1.25rem;
+}
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
