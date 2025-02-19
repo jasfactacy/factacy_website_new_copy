@@ -129,23 +129,23 @@ const Navbar = ({ isTopOfPage, openChatBot, setOpenChatBot }) => {
         {
           title: "Blog",
           details: "",
-          navigate: goToBlogsPage,
+          navigate: {},
         },
         {
           title: "Whitepapers",
           details: "",
-          navigate: goToWhitepapers,
+          navigate: {},
         },
 
         {
           title: "Webinar and Videos",
           details: "",
-          navigate: goToWebinarsAndVideos,
+          navigate: {},
         },
         {
           title: "FAQ",
           details: "",
-          navigate: goToFAQPage,
+          navigate: {},
         },
       ]
     }
@@ -155,7 +155,7 @@ const Navbar = ({ isTopOfPage, openChatBot, setOpenChatBot }) => {
     { text: 'Products', list: products },
     { text: 'Services', list: services },
     { text: 'Industries', list: industries },
-    { text: 'Case Studies', navigate: goToCaseStudiesPage },
+    { text: 'Case Studies', navigate: {} },
     { text: 'Resources', list: resources },
     { text: 'About Us', navigate: goToAboutPage },
   ]

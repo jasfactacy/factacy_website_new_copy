@@ -19,11 +19,11 @@ const Footer = () => {
         },
         {
           title: "Blogs",
-          onClick: goToBlogsPage,
+          onClick: {},
         },
         {
           title: "FAQ",
-          onClick: goToFAQPage,
+          onClick: {},
         },
       ],
     },
