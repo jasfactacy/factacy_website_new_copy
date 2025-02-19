@@ -13,6 +13,8 @@ import MobileNavigation from "./MobileNavigation";
 import Analytics from '../../Pages/AOT/Analytics_of_things';
 import Chat from "./Chat";
 import chat from "../../assets/icons8-chat.gif";
+import { Menu } from "lucide-react";
+
 
 
 
@@ -254,10 +256,18 @@ const Navbar = ({ isTopOfPage, openChatBot, setOpenChatBot }) => {
 
           {/* Mobile Menu Toggle Button - Only Visible in Mobile View */}
           <button
-            className="flex md:hidden items-center"
-            onClick={() => setIsMenuToggled((prev) => !prev)} // Correct toggle logic
+            className="flex flex-col justify-between w-6 h-6 mr-3 md:hidden"
+            onClick={() => setIsMenuToggled((prev) => !prev)}
           >
-            <ExpandIcon className={`transition-transform duration-300 ${isMenuToggled ? "rotate-180" : "rotate-0"}`} />
+            <div
+              className={`w-6 h-1 bg-buttonCTA rounded transition-transform duration-300 ${isMenuToggled ? "rotate-45 translate-y-2" : ""
+                }`}
+            />
+            <div className={`w-6 h-1 bg-buttonCTA rounded transition-opacity duration-300 ${isMenuToggled ? "opacity-0" : "opacity-100"}`} />
+            <div
+              className={`w-6 h-1 bg-buttonCTA rounded transition-transform duration-300 ${isMenuToggled ? "-rotate-45 -translate-y-2" : ""
+                }`}
+            />
           </button>
         </div>
 
