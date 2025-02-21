@@ -1,0 +1,13 @@
+{
+    "name": "Vite Codespace",
+    "image": "mcr.microsoft.com/vscode/devcontainers/node:18", // use a Node version that supports Vite
+    "postCreateCommand": "npm install",
+    "forwardPorts": [3000],
+    "portsAttributes": {
+      "3000": {
+        "label": "Vite Dev Server",
+        "onAutoForward": "openPreview"
+      }
+    }
+  }
+  
