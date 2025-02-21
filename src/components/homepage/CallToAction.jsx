@@ -50,7 +50,7 @@ const CallToAction = () => {
         <div className="flex justify-center gap-6">
           <button
               onClick={handleChatBotToggle}
-              className="px-6 py-3 rounded-xl font-semibold text-white border-2 border-blue-500 transition-all duration-200 ease-in-out bg-buttonCTA"            >
+              className="px-6 py-3 rounded-xl font-semibold text-white border-2 border-blue-500 transition-all duration-200 ease-in-out bg-primaryBlue"            >
               {openChatBot ? "Close Chat" : "Reach Us"}
             </button>
         </div>

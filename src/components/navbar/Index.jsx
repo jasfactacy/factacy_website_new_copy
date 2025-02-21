@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import useMediaQuery from "../../hooks/useMediaQuery";
+import useMediaQuery from "../../hooks/useMediaQuery.js"
 import close from "../../assets/close-icon.svg";
 import open from "../../assets/menu-icon.svg";
 // import ChatBot from "../chatbot";

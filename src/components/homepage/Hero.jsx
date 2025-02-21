@@ -74,7 +74,7 @@ const Hero = () => {
             {/* Mail Us Button */}
             <button
               onClick={handleChatBotToggle}
-              className="px-8 py-3 md:mt-4 sm:mt-4 md:ml-0 sm:ml-[-2.5rem] rounded-xl font-semibold text-white border-blue-500 transition-all duration-200 ease-in-out bg-buttonCTA"
+              className="px-8 py-3 md:mt-4 sm:mt-4 md:ml-0 sm:ml-[-2.5rem] rounded-xl font-semibold text-white border-blue-500 transition-all duration-200 ease-in-out bg-primaryBlue"
             >
               {openChatBot ? "Close Chat" : "Start my AI journey"}
             </button>

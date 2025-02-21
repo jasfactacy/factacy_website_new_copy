@@ -21,7 +21,7 @@ import imran from "../assets/about/Imran.png";
 import satarupa from "../assets/WheelsImages/satarupa.jpg";
 import manish from "../assets/WheelsImages/manish.jpeg";
 import jas from "../assets/WheelsImages/jasmine.jpg";
-import useMediaQuery from "../hooks/UseMediaQuery";
+import useMediaQuery from "../hooks/useMediaQuery.js";
 
 const About = () => {
   const backedCompany = [

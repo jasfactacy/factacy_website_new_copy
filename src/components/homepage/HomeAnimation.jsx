@@ -18,7 +18,7 @@ const HomeAnimation = () => {
       <div className="flex items-start w-screen  gap-2 h-[3rem] md:mb-0 lg:h-[3rem] xl:h-[4rem]">
         <div className="h-full flex min-w-fit items-center">
           <h1 className="sm:text-2xl lg:text-4xl xl:text-4xl md:mb-0 sm:mb-[15rem] md:ml-0 sm:ml-[-3rem] font-semibold ">
-            Business-First AI solutions <br />that evolve with your
+            Business-First AI solutions<br/>that evolve with your
           </h1>
           <Swiper
           direction={"vertical"}
@@ -63,7 +63,7 @@ const HomeAnimation = () => {
 
       </div >
 
-      <h1 className="text-2xl lg:text-4xl xl:text-4xl font-semibold mb-5 relative  md:top-3 sm:top-[-7.25rem] md:ml-0 sm:ml-[-3rem] left-1">
+      <h1 className="text-2xl lg:text-4xl xl:text-4xl font-semibold mb-5 relative  md:top-3 sm:top-[-7.25rem] md:ml-0 sm:ml-[-3rem] left-0.5">
         needs.
       </h1>
     </>

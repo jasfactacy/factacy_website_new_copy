@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
-import img1 from "../../assets/Factacy_Agentic_AI.jpg";
-import img2 from "../../assets/Factacy_AI_as_a_service.jpg";
-import img3 from "../../assets/Factacy_Analytics_of_things.jpg";
+import React, { useContext, useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { SOLUTIONS_PAGE } from '../../Routes/routesConstents';
 import { ChatContext } from "../../context/ChatContext.jsx";
+import ServicesMobile from "./ServicesMobile.jsx"; // Import the mobile version
 
-
-
+import img1 from "../../assets/Factacy_Agentic_AI.jpg";
+import img2 from "../../assets/Factacy_AI_as_a_service.jpg";
+import img3 from "../../assets/Factacy_Analytics_of_things.jpg";
 
 const serviceData = {
     reason: {
@@ -43,26 +42,31 @@ const serviceData = {
     ],
 };
 
-const handleMailClick = () => {
-    window.location.href = "mailto:connect@factacy.ai";
-};
-
 const Services = () => {
-
     const navigate = useNavigate();
-
     const { openChatBot, setOpenChatBot } = useContext(ChatContext);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-    const handleChatBotToggle = () => {
-        setOpenChatBot((prev) => !prev); // Toggle chatbot visibility
-    };
+    // Effect to update isMobile on window resize
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    if (isMobile) {
+        return <ServicesMobile />; // Render mobile version if screen width < 768px
+    }
 
     return (
-        <div className="lg:bg-gradient-to-b from-white to-[#E8F5FF] py-[12rem] ">
+        <div className="lg:bg-gradient-to-b from-white to-[#E8F5FF] py-[5rem] ">
             <div className="container mx-auto px-1">
                 {/* Features Section */}
                 <div className="text-center mb-2">
-                    <h3 style={{ fontSize: "1rem", fontWeight: "600", color: "#3B82F6" }}>What we offer</h3>
+                    <h3 style={{ fontSize: "1rem", fontWeight: "600", color: "#2475BB" }}>What we offer</h3>
                 </div>
 
                 {/* Reason Section */}
@@ -85,17 +89,16 @@ const Services = () => {
                         >
                             {/* Card Content */}
                             <div className="p-5  rounded-lg shadow-md flex-1 relative bg-white">
-
                                 <h3 className="text-xl font-semibold mb-4 mt-3">{service.title}</h3>
                                 <ul className="list-disc pl-5 text-gray-700">
                                     {service.features.map((feature, idx) => (
                                         <li key={idx}>{feature}</li>
                                     ))}
                                 </ul>
-                                {/* Mail Us Button */}
+                                {/* Chatbot Toggle Button */}
                                 <button
-                                    onClick={handleChatBotToggle}
-                                    className="px-8 py-3 md:mt-4 sm:mt-4 md:ml-0 sm:ml-[1.25rem] rounded-xl font-semibold text-white border-blue-500 transition-all duration-200 ease-in-out bg-buttonCTA"
+                                    onClick={() => setOpenChatBot((prev) => !prev)}
+                                    className="px-8 py-3 md:mt-4 sm:mt-4 md:ml-0 sm:ml-[1.25rem] rounded-xl font-semibold text-white border-blue-500 transition-all duration-200 ease-in-out bg-primaryBlue"
                                 >
                                     {openChatBot ? "Close Chat" : "Get Started"}
                                 </button>
@@ -116,11 +119,10 @@ const Services = () => {
                         className="flex justify-center items-center cursor-pointer"
                         onClick={() => navigate(SOLUTIONS_PAGE)}
                     >
-                        <p className="text-center text-sm font-semibold hover:text-sky-800">
+                        <p className="text-center text-sm font-semibold hover:text-primaryBlue">
                             Explore all services
                         </p>
                     </div>
-
                 </div>
             </div>
         </div>

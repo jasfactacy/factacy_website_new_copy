@@ -46,7 +46,7 @@ const SuccessContent = [
         title: "Client Success Story 4:",
         subtitle: "Overcoming Hardware Constraints with AI Innovation",
         description:
-            "Watchout Wearables partnered with Factacy to tackle a complex project involving strict hardware limitations. Factacy’s team, led by founder Inder, approached the challenge with passion and determination, ensuring a seamless deployment despite the constraints. Their problem-solving mindset and commitment to the client's vision made a lasting impact.",
+            "Watchout Wearables partnered with Factacy to tackle a complex project involving strict hardware limitations. Factacy’s team, approached the challenge with passion and determination, ensuring a seamless deployment despite the constraints. Their problem-solving mindset and commitment to the client's vision made a lasting impact.",
         testimonial:
             '"Factacy helped turn our vision of an AI-powered kids’ smartwatch into reality. Their innovative approach and flawless execution exceeded our expectations, delivering a game-changing product. A truly delightful experience!" – Abhisek Baheti, Founder, Watchout Wearables',
         imgToShow: Mac4,

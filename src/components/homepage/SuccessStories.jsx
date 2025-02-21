@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import useMediaQuery from "../../hooks/UseMediaQuery";
+import useMediaQuery from "../../hooks/useMediaQuery.js";
 import Piyush from "../../assets/piyush_garg.jpeg";
 import Aditi from "../../assets/aditi_madan.jpeg";
 import Kranti from "../../assets/kranti_anand.jpeg";
@@ -54,7 +54,7 @@ const SuccessContent = [
         title2: "Founder, Watchout Wearables",
         subtitle: "Overcoming Hardware Constraints with AI Innovation",
         description:
-            "Watchout Wearables partnered with Factacy to tackle a complex project involving strict hardware limitations. Factacy’s team, led by founder Inder, approached the challenge with passion and determination, ensuring a seamless deployment despite the constraints. Their problem-solving mindset and commitment to the client's vision made a lasting impact.",
+            "Watchout Wearables partnered with Factacy to tackle a complex project involving strict hardware limitations. Factacy’s team, approached the challenge with passion and determination, ensuring a seamless deployment despite the constraints. Their problem-solving mindset and commitment to the client's vision made a lasting impact.",
         testimonial:
             '"Factacy helped turn our vision of an AI-powered kids’ smartwatch into reality. Their innovative approach and flawless execution exceeded our expectations, delivering a game-changing product. A truly delightful experience!" ',
         imgToShow: Mac4,
@@ -95,7 +95,7 @@ const SlidingImage = ({ activeIndex }) => {
     return (
         <div className="relative ">
             {/* Background Mac frame */}
-            <img loading="lazy"  id="mac-blank" src={MacBlank} alt="Mac frame" className="w-full" />
+            <img loading="lazy" id="mac-blank" src={MacBlank} alt="Mac frame" className="w-full " />
             <div className="absolute inset-0 flex items-center justify-center overflow-hidden mb-2.5">
                 <div
                     ref={scrollContainerRef}
@@ -106,7 +106,7 @@ const SlidingImage = ({ activeIndex }) => {
                     }}
                 >
                     {SuccessContent.map((content, index) => (
-                        <img loading="lazy" 
+                        <img loading="lazy"
                             key={index}
                             src={content.imgToShow}
                             alt={`Success Story ${index}`}
@@ -133,76 +133,45 @@ const Success = () => {
 
     const isDesktop = useMediaQuery('(min-width: 1024px)');
 
-
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         if (!leftContainerRef.current) return;
-            
-    //         const scrollTop = leftContainerRef.current.scrollTop;
-    //         console.log("ScrollTop:", scrollTop);
-    
-    //         const containerHeight = leftContainerRef.current.scrollHeight;
-    //         const totalContent = SuccessContent.length;
-    //         const sectionHeight = containerHeight / totalContent;
-    
-    //         // Determine which section is currently in view
-    //         const newIndex = Math.min(
-    //             Math.max(Math.round(scrollTop / sectionHeight), 0),
-    //             totalContent - 1
-    //         );
-            
-    //         setActiveIndex(newIndex); // Update the active index
-    //     };
-    
-    //     const container = leftContainerRef.current;
-    
-    //     if (container) {
-    //         container.addEventListener("scroll", handleScroll);
-    //     }
-    //     return () => {
-    //         if (container) container.removeEventListener("scroll", handleScroll);
-    //     };
-    // }, [SuccessContent]);
-    
     useEffect(() => {
         const handleScroll = () => {
             if (!leftContainerRef.current) return;
-    
+
             const scrollTop = leftContainerRef.current.scrollTop;
             console.log("ScrollTop:", scrollTop); // Debugging
-    
+
             const containerHeight = leftContainerRef.current.scrollHeight;
             const totalContent = SuccessContent.length;
             const sectionHeight = containerHeight / totalContent;
-    
+
             // Determine which section is currently in view
             const newIndex = Math.min(
                 Math.max(Math.round(scrollTop / sectionHeight), 0),
                 totalContent - 1
             );
-    
+
             setActiveIndex(newIndex); // Update the active index
         };
-    
+
         const attachScrollListener = () => {
             if (leftContainerRef.current) {
                 leftContainerRef.current.addEventListener("scroll", handleScroll);
                 setTimeout(handleScroll, 100); // Ensure it runs initially
             }
         };
-    
+
         // Attach the listener once the component mounts and ref is available
         setTimeout(attachScrollListener, 200); // Small delay to ensure ref exists
-    
+
         return () => {
             if (leftContainerRef.current) {
                 leftContainerRef.current.removeEventListener("scroll", handleScroll);
             }
         };
     }, [SuccessContent]); // Ref is not included in dependencies to prevent unnecessary re-renders
-    
 
-    
+
+
 
     useEffect(() => {
         const handleWheelScroll = (event) => {
@@ -232,7 +201,7 @@ const Success = () => {
             <div className="mx-auto px-4 w-full relative">
                 {/* Top Section */}
                 <div className="container mx-auto text-center mb-16">
-                    <h3 className="text-md font-semibold text-title">Success Stories</h3>
+                    <h3 className="text-md font-semibold text-primaryBlue">Success Stories</h3>
                     <h2 className="text-3xl font-bold mb-4 max-w-4xl mx-auto">
                         Proven Success with AI.
                     </h2>
@@ -257,31 +226,33 @@ const Success = () => {
                                     key={index}
                                     ref={(el) => (sectionRefs.current[index] = el)}
                                     id={`story-${index}`}
-                                    className="relative py-16 top-[-15rem]"
+                                    className="relative py-16 top-0"
                                     style={{
                                         opacity: 1,
                                         transition: "opacity 0.3s ease-in-out",
                                     }}
                                 >
                                     <div className="relative w-40 h-40">
-                                        <img loading="lazy" 
+                                        <img loading="lazy"
                                             src={item.img}
                                             alt="Profile"
-                                            className="w-full h-full rounded-full object-cover absolute top-56 left-0"
+                                            className="w-full h-full rounded-full object-cover absolute top-0 left-0"
                                         />
-                                        <h2 className="text-sm font-bold  text-center absolute w-full top-[25rem]">
+                                        <h2 className="text-sm font-bold  text-center absolute w-full top-[11rem]">
                                             {item.title}
                                         </h2>
-                                        <h3 className="text-sm text-center absolute w-full top-[26rem]">
-                                        {item.title2}
+                                        <h3 className="text-sm text-center absolute w-full top-[12.5rem]">
+                                            {item.title2}
                                         </h3>
                                     </div>
-                                    <div className="ml-48 mt-16">
-                                        <h3 className="text-lg font-bold ">{item.subtitle}</h3>
+                                    <div className="ml-48 mt-0" style={{ transform: "translateY(-150px)" }}>
+                                        <h3 className="text-lg font-bold mt-0">{item.subtitle}</h3>
                                         <p className="mb-2 text-sm">{item.description}</p>
                                         <h3 className="font-semibold">Testimonial:</h3>
                                         <blockquote className="italic text-sm">{item.testimonial}</blockquote>
                                     </div>
+
+
                                 </div>
                             ))}
 

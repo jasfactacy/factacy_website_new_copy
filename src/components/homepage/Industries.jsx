@@ -23,7 +23,7 @@ const Industries = () => {
             <div className="container mx-auto px-4">
 
                 {/*Feature Section*/}
-                <div className="text-center items-center mb-2 text-title">
+                <div className="text-center items-center mb-2 text-primaryBlue">
                     <h3 className="text-md font-semibold">
                         {content[0].text}
                     </h3>

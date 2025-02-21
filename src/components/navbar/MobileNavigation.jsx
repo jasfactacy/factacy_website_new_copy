@@ -1,7 +1,7 @@
 import { useState } from "react";
 import FactacyFullNavIcon from "../Icons/FacatacyFullNavIcon";
 import ExpandIcon from "../Icons/ExpandIcon";
-import useMediaQuery from "../../hooks/UseMediaQuery";
+import useMediaQuery from "../../hooks/useMediaQuery.js";
 import close from "../../assets/close-icon.svg";
 import useRoutesFunctions from "../../hooks/routes/useRoutesFunctions"; // Import routes functions
 
