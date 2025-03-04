@@ -7,9 +7,12 @@ import Services from "../components/homepage/Services.jsx";
 import WhyFactacy from "../components/homepage/WhyFactacy.jsx";
 import Industries from "../components/homepage/Industries.jsx";
 import Success from "../components/homepage/SuccessStories.jsx";
-// import Resources from "../components/homepage/ResourcesAndInsights.jsx.jsx";
 import CallToAction from "../components/homepage/CallToAction.jsx";
 
+const sectionVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
 
 const Homepage = () => {
   return (
@@ -19,28 +22,61 @@ const Homepage = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.75, ease: "easeOut" }}
     >
-      {/* Hero Section */} 
+      {/* Hero Section */}
       <Hero />
 
       {/* Logo Carousel */}
-      <LogoCarousel />
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <LogoCarousel />
+      </motion.div>
 
       {/* Services Section */}
-      <Services />
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <Services />
+      </motion.div>
 
       {/* Why Factacy Section */}
       <WhyFactacy />
 
-      {/* Idustries we serve */}
-      <Industries />
+      {/* Industries We Serve */}
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <Industries />
+      </motion.div>
 
       {/* Success Stories */}
-      <Success />
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <Success />
+      </motion.div>
 
       {/* Call to Action */}
-      <CallToAction />
-
-
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <CallToAction />
+      </motion.div>
     </motion.div>
   );
 };

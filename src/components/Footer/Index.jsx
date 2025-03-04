@@ -95,8 +95,8 @@ const Footer = () => {
           <div className="mt-1 flex flex-col sm:flex-row gap-4">
             <div>
               <h2 className="text-primary-color-white-900 text-md">Call Us</h2>
-              <p className="text-primary-color-white-700 text-sm">+91 7290980980</p>
-            </div>
+              <p className="text-primary-color-white-700 text-sm whitespace-nowrap">+91 7290980980</p>
+              </div>
             <div>
               <h2 className="text-primary-color-white-900 text-md">Email Us</h2>
               <a className="text-primary-color-white-700 text-sm" href="mailto:connect@factacy.ai">

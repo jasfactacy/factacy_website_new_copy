@@ -5,13 +5,15 @@ import Aditi from "../../assets/aditi_madan.jpeg";
 import Kranti from "../../assets/kranti_anand.jpeg";
 import Abhisek from "../../assets/abhisek_baheti.jfif";
 import Rohit from "../../assets/rohit_warrier.jfif";
+import Pulkit from "../../assets/pulkit_ahuja.jpg";
 import MacBlank from "../../assets/Mac.png";
-import Mac1 from "../../assets/MacImg1.jpg";
-import Mac2 from "../../assets/MacImg2.jpg";
-import Mac3 from "../../assets/MacImg3.jpg";
-import Mac4 from "../../assets/MacImg4.jpg";
-import Mac5 from "../../assets/MacImg5.jpg";
-import PhoneView from './SuccessStoriesPhoneView';  // Adjust the path according to your structure
+import Mac1 from "../../assets/BluePineFoods_website.jpg";
+import Mac2 from "../../assets/ARRCOAT_website.jpg";
+import Mac3 from "../../assets/Zepcruit_website.jpg";
+import Mac4 from "../../assets/Watchout_Wearables_website.jpg";
+import Mac5 from "../../assets/Chitkara_University_website.jpg";
+import Mac6 from "../../assets/Proxgy_website.png";
+import PhoneView from './SuccessStoriesPhoneView';  
 
 
 const SuccessContent = [
@@ -70,12 +72,23 @@ const SuccessContent = [
             '"Our strategic partnership with Factacy is a step towards fostering innovation and nurturing talent. Through our MoU, Chitkara University will provide skilled talent, while Factacy offers them real-world internships and projects. This collaboration creates a win-win ecosystem, driving growth for both our students and India startup landscape." ',
         imgToShow: Mac5,
     },
+    {
+        img: Pulkit,
+        title: "Pulkit Ahuja",
+        title2: "Founder, Proxgy",
+        subtitle: "AI-Driven Analytics Transforms IoT Insights for Proxgy",
+        description:
+            "Proxgy, a pioneering IoT company, partnered with Factacy to harness the power of AI-driven analytics and software development for their IoT ecosystem. With vast amounts of data generated from IoT devices, Proxgy needed a robust, intelligent system to process, analyze, and derive actionable insights in real-time. Factacy leveraged its expertise in data analytics, AI, and software development to build a scalable solution that optimized data processing, anomaly detection, and predictive analytics. This transformation enabled Proxgy to enhance operational efficiency, improve decision-making, and deliver a superior user experience.",
+        testimonial:
+            '"Factacy’s expertise in AI, data analytics, and software development has been instrumental in elevating our IoT analytics capabilities. Their ability to turn raw data into actionable insights has not only improved our operations but also unlocked new possibilities for innovation. A truly invaluable partnership!" ',
+        imgToShow: Mac6,
+    },
 ];
 
 const SlidingImage = ({ activeIndex }) => {
     const scrollContainerRef = useRef(null);
 
-    useEffect(() => {
+    useEffect(() => { 
         console.log("ActiveIndex changed:", activeIndex);
         const container = scrollContainerRef.current;
         if (container) {
