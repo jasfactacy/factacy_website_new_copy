@@ -8,9 +8,11 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
+    allowedHosts: true,
   },
   preview: {
     port: 3000,
+    allowedHosts: true
   },
   resolve: {
     extensions: [".js", ".ts", ".jsx", ".tsx"],
