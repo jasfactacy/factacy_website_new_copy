@@ -49,24 +49,10 @@ const Homepage = () => {
       <WhyFactacy />
 
       {/* Industries We Serve */}
-      <motion.div
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <Industries />
-      </motion.div>
+      <Industries />
 
       {/* Success Stories */}
-      <motion.div
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <Success />
-      </motion.div>
+      <Success />
 
       {/* Call to Action */}
       <motion.div

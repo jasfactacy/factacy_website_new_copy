@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Piyush from "../../assets/piyush_garg.jpeg";
 import Aditi from "../../assets/aditi_madan.jpeg";
 import Kranti from "../../assets/kranti_anand.jpeg";
@@ -64,55 +64,95 @@ const SuccessContent = [
         imgToShow: Mac5,
     },
     {
-            img: Pulkit,
-            title: "Pulkit Ahuja",
-            title2: "Founder, Proxgy",
-            subtitle: "AI-Driven Analytics Transforms IoT Insights for Proxgy",
-            description:
-                "Proxgy, a pioneering IoT company, partnered with Factacy to harness the power of AI-driven analytics and software development for their IoT ecosystem. With vast amounts of data generated from IoT devices, Proxgy needed a robust, intelligent system to process, analyze, and derive actionable insights in real-time. Factacy leveraged its expertise in data analytics, AI, and software development to build a scalable solution that optimized data processing, anomaly detection, and predictive analytics. This transformation enabled Proxgy to enhance operational efficiency, improve decision-making, and deliver a superior user experience.",
-            testimonial:
-                '"Factacy’s expertise in AI, data analytics, and software development has been instrumental in elevating our IoT analytics capabilities. Their ability to turn raw data into actionable insights has not only improved our operations but also unlocked new possibilities for innovation. A truly invaluable partnership!" ',
-            imgToShow: Mac6,
-        },
+        img: Pulkit,
+        title: "Pulkit Ahuja",
+        title2: "Founder, Proxgy",
+        subtitle: "AI-Driven Analytics Transforms IoT Insights for Proxgy",
+        description:
+            "Proxgy, a pioneering IoT company, partnered with Factacy to harness the power of AI-driven analytics and software development for their IoT ecosystem. With vast amounts of data generated from IoT devices, Proxgy needed a robust, intelligent system to process, analyze, and derive actionable insights in real-time. Factacy leveraged its expertise in data analytics, AI, and software development to build a scalable solution that optimized data processing, anomaly detection, and predictive analytics. This transformation enabled Proxgy to enhance operational efficiency, improve decision-making, and deliver a superior user experience.",
+        testimonial:
+            '"Factacy’s expertise in AI, data analytics, and software development has been instrumental in elevating our IoT analytics capabilities. Their ability to turn raw data into actionable insights has not only improved our operations but also unlocked new possibilities for innovation. A truly invaluable partnership!" ',
+        imgToShow: Mac6,
+    },
 ];
 
 const SuccessStoriesPhoneView = () => {
+    const scrollRef = useRef(null);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const handleScroll = () => {
+        const scrollLeft = scrollRef.current.scrollLeft;
+        const cardWidth = scrollRef.current.firstChild?.offsetWidth || 320;
+        const index = Math.round(scrollLeft / cardWidth);
+        setActiveIndex(index);
+    };
+
+    useEffect(() => {
+        const ref = scrollRef.current;
+        ref.addEventListener("scroll", handleScroll);
+        return () => ref.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <div className="flex flex-col items-center gap-6 p-4">
-            {SuccessContent.map((story, index) => (
+        <div className="flex flex-col items-center w-full">
+            {/* Scrollable Wrapper with fixed width */}
+            <div className="w-full overflow-hidden">
                 <div
-                    key={index}
-                    className="w-full max-w-xs bg-white shadow-lg rounded-2xl overflow-hidden"
+                    ref={scrollRef}
+                    className="flex overflow-x-auto snap-x snap-mandatory px-4 space-x-4 pb-4"
+                    style={{
+                        scrollSnapType: "x mandatory",
+                        WebkitOverflowScrolling: "touch", // smooth scrolling on iOS
+                        scrollbarWidth: "none", // Firefox
+                        msOverflowStyle: "none", // IE and Edge
+                    }}
+                    onScroll={handleScroll}
                 >
-                    {/* Main Image */}
-                    <img loading="lazy"
-                        src={story.imgToShow}
-                        alt="Main"
-                        className="w-full h-40 object-cover"
-                    />
+                    {SuccessContent.map((story, index) => (
+                        <div
+                            key={index}
+                            className="snap-start flex-shrink-0 w-80 bg-white shadow-lg rounded-2xl overflow-hidden"
+                        >
+                            <img
+                                loading="lazy"
+                                src={story.imgToShow}
+                                alt="Main"
+                                className="w-full h-40 object-cover"
+                            />
 
-                    {/* Profile Image & Content */}
-                    <div className="flex items-center px-4 -mt-6">
-                        <img loading="lazy"
-                            src={story.img}
-                            alt="Profile"
-                            className="w-14 h-14 border-4 border-white rounded-full shadow-md"
-                        />
-                        <div className="ml-4 mt-6">
-                            
-                            <p className="text-sm font-bold text-gray-600">{story.subtitle}</p>
+                            <div className="flex items-center px-4 -mt-6">
+                                <img
+                                    loading="lazy"
+                                    src={story.img}
+                                    alt="Profile"
+                                    className="w-14 h-14 border-4 border-white rounded-full shadow-md"
+                                />
+                                <div className="ml-4 mt-6">
+                                    <p className="text-sm font-bold text-gray-600">{story.subtitle}</p>
+                                </div>
+                            </div>
+
+                            <div className="p-4 text-sm text-gray-800">
+                                <p className="mb-2">{story.description}</p>
+                                <blockquote className="italic text-gray-600 text-xs border-l-4 border-blue-500 pl-2">
+                                    {story.testimonial}
+                                </blockquote>
+                            </div>
                         </div>
-                    </div>
-
-                    {/* Story Content */}
-                    <div className="p-4 text-sm text-gray-800">
-                        <p className="mb-2">{story.description}</p>
-                        <blockquote className="italic text-gray-600 text-xs border-l-4 border-blue-500 pl-2">
-                            {story.testimonial}
-                        </blockquote>
-                    </div>
+                    ))}
                 </div>
-            ))}
+            </div>
+
+            {/* Pagination Dots */}
+            <div className="flex space-x-2 mt-2">
+                {SuccessContent.map((_, index) => (
+                    <div
+                        key={index}
+                        className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${activeIndex === index ? "bg-primary-color-900 scale-125" : "bg-gray-300"
+                            }`}
+                    />
+                ))}
+            </div>
         </div>
     );
 };
